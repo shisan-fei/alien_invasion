@@ -14,6 +14,8 @@ def check_keydown_events(ship,event,ai_setting,bullets,screen):
     elif event.key == pygame.K_SPACE:
         #创建一个子弹，放入编组bullets
         fire_bullet(ai_setting,screen,ship,bullets)
+    elif event.key == pygame.K_q:
+        sys.exit()
 
 
 def check_keyup_events(ship,event):
@@ -33,7 +35,7 @@ def check_events(ai_setting,screen,ship,bullets):
         elif event.type == pygame.KEYUP:
             check_keyup_events(ship, event)
 
-def update_screen(ai_setting,screen,ship,bullets):
+def update_screen(ai_setting,screen,ship,alien,bullets):
     '''
     更新屏幕图像
     :param ai_setting: 配置参数的实例化对象
@@ -45,6 +47,7 @@ def update_screen(ai_setting,screen,ship,bullets):
     for bullet in bullets.sprites():
         bullet.draw_bullet()
     ship.blitem()  # 绘制飞船
+    alien.blitem()
     pygame.display.flip()
 
 def update_bullets(bullets):
