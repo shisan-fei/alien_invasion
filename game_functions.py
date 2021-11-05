@@ -2,6 +2,7 @@ import sys
 import pygame
 from bullet import Bullet
 from alien import Alien
+from settings import Setting  #导入配置类
 
 '''将程序主要函数存放，减轻alien_invasion中run_game代码量'''
 
@@ -81,11 +82,11 @@ def create_alien(ai_setting,screen,aliens,alien_number,row_number):
     alien.x = alien_width + 2 * alien_width * alien_number
     alien.rect.x = alien.x
     alien.rect.y = alien.rect.height + 2 * alien.rect.height * row_number
-    alien.add(alien)
+    alien.add(aliens)
 
 def get_number_rows(ai_setting,ship_height,alien_heigth):
     '''计算屏幕可容纳外星人数量'''
-    available_space_y = (ai_setting.screen_heigth - (3 * alien_heigth) - ship_height)
+    available_space_y = (ai_setting.screen_height - (3 * alien_heigth) - ship_height)
     number_rows = int(available_space_y / (2 * alien_heigth))
     return number_rows
 

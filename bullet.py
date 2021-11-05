@@ -9,7 +9,7 @@ class Bullet(Sprite):   #继承Sprite类
         self.screen = screen
 
         #在（0，0）处创建一个子弹，再设置子弹位置
-        self.rect = pygame.Rect(0,0,ai_setting.bullet_width,ai_setting.bullet_hight)
+        self.rect = pygame.Rect(0,0,ai_setting.bullet_width,ai_setting.bullet_height)
         self.rect.centerx = ship.rect.centerx    #子弹从飞船顶部飞出，子弹centerx和top和飞船相同
         self.rect.top = ship.rect.top
 

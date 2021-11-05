@@ -12,7 +12,7 @@ def run_game():
     ai_setting = Setting()     #将配置类进行实例化
     # screen = pygame.display.set_mode((1280,720))   #创建窗口
     screen = pygame.display.set_mode(
-        (ai_setting.screen_width,ai_setting.screen_hight)
+        (ai_setting.screen_width,ai_setting.screen_height)
     )  #调用配置文件中定义的属性
     pygame.display.set_caption('Alien Invasion')
 
@@ -20,7 +20,7 @@ def run_game():
     ship = Ship(screen,ai_setting)              #创造一个飞船
     bullets = Group()     #创建实例,定义子弹编组
     aliens = Group()   #创建外星人编组
-    gf.create_fleet(ai_setting,screen,aliens)
+    gf.create_fleet(ai_setting,screen,ship,aliens)
     # alien = Alien(ai_setting, screen)   #创建外星人
 
     while True:

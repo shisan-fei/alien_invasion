@@ -7,14 +7,14 @@ class Setting():
         '''初始化游戏设置'''
         #游戏边框大小颜色设置
         self.screen_width=1280
-        self.screen_hight= 720
+        self.screen_height= 720
         self.bg_color=(230,230,230)  #定义背景颜色，rgb值，分别是红色，绿色，蓝色
         self.ship_speed_factor=1.5     #飞船每次移动像素
 
         #发射子弹设置
         self.bullet_speed_factor = 1    #子弹速度
         self.bullet_width = 3
-        self.bullet_hight = 15
+        self.bullet_height = 15
         self.bullet_color = (230,0,0)
         self.bullets_allowed = 10      #单屏幕子弹最大数量
  
