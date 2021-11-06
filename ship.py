@@ -39,3 +39,7 @@ class Ship():
         # if self.moving_spac:
         #     gf.fire_bullet(self.ai_setting,self.screen,ship,bullets)
         self.rect.centerx = self.center   #根据center更改rect
+    
+    def center_ship(self):
+        '''让飞船剧中'''
+        self.center = self.screen_rect.centerx
