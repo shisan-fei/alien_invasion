@@ -39,7 +39,7 @@ def check_events(ai_setting,screen,ship,bullets):
         elif event.type == pygame.KEYUP:
             check_keyup_events(ship, event)
 
-def update_screen(ai_setting,screen,ship,aliens,bullets):
+def update_screen(ai_setting,screen,stats,ship,aliens,bullets,play_button):
     '''
     更新屏幕图像
     :param ai_setting: 配置参数的实例化对象
@@ -52,6 +52,10 @@ def update_screen(ai_setting,screen,ship,aliens,bullets):
         bullet.draw_bullet()
     ship.blitem()  # 绘制飞船
     aliens.draw(screen)    #对编组调用draw，pygame自动绘制编组图像
+
+    #游戏处于非活动状态时绘制play按钮
+    if not stats.game_active:
+        play_button.draw_button()
     pygame.display.flip()
 
 def update_bullets(ai_setting,screen,ship,aliens,bullets):
