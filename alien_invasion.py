@@ -33,13 +33,12 @@ def run_game():
     # alien = Alien(ai_setting, screen)   #创建外星人
 
     while True:
-        gf.check_events(ai_setting,screen,ship,bullets)      #导入事件检查
+        gf.check_events(ai_setting,screen,stats,play_button,ship,aliens,bullets)      #导入事件检查
         if stats.game_active:
             ship.update()  # 移动图像
             gf.update_bullets(ai_setting,screen,ship,aliens,bullets)
             gf.update_aliens(ai_setting,stats,screen,ship,aliens,bullets)
         gf.update_screen(ai_setting,screen,stats,ship,aliens,bullets,play_button)     #导入屏幕更新图像
-
 
 
 run_game()
